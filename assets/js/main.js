@@ -99,7 +99,8 @@
   function scrollToId(id) {
     var target = document.getElementById(id);
     if (!target) return;
-    var y = target.getBoundingClientRect().top + window.pageYOffset - (headerH - 1);
+    var offset = (header ? header.offsetHeight : headerH) - 1;
+    var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
