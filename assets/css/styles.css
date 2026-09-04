@@ -236,7 +236,7 @@ select:focus-visible {
   width: 28px;
   height: 28px;
   object-fit: contain;
-  filter: drop-shadow(0 0 5px rgba(124, 255, 181, 0.45));
+  filter: drop-shadow(0 0 5px rgba(140, 130, 255, 0.4));
 }
 .brand__name {
   font-family: var(--font-display);
