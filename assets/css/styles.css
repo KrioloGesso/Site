@@ -353,7 +353,7 @@ select:focus-visible {
     linear-gradient(180deg, rgba(6,6,5,0.55) 0%, rgba(6,6,5,0.15) 24%, rgba(6,6,5,0.25) 55%, rgba(6,6,5,0.9) 100%);
 }
 
-/* Linhas de laser decorativas — motivo gráfico próprio, não fotografia */
+/* Linha de laser decorativa — motivo gráfico próprio, não fotografia */
 .hero__laser {
   position: absolute;
   inset: 0;
@@ -361,32 +361,27 @@ select:focus-visible {
   overflow: hidden;
   pointer-events: none;
 }
-.hero__laser svg {
+.hero__laser-line {
   position: absolute;
-  top: 8%;
-  right: 6%;
-  width: min(46vw, 620px);
-  height: auto;
-  opacity: 0.85;
-}
-.hero__laser line {
-  stroke: var(--color-accent-glow);
-  stroke-width: 1.2;
-  filter: drop-shadow(0 0 4px var(--color-accent-glow)) drop-shadow(0 0 10px rgba(124,255,181,0.6));
-}
-.hero__laser .laser-sweep {
+  left: 0;
+  right: 0;
+  top: 40%;
+  height: 1.5px;
+  background: var(--color-accent-glow);
+  box-shadow:
+    0 0 6px 1px var(--color-accent-glow),
+    0 0 26px 6px rgba(124, 255, 181, 0.5);
   animation: laser-sweep 5s var(--ease) infinite;
-  transform-origin: center;
 }
 @keyframes laser-sweep {
   0%, 100% { opacity: 0.55; }
   50% { opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero__laser .laser-sweep { animation: none; opacity: 0.85; }
+  .hero__laser-line { animation: none; opacity: 0.85; }
 }
 @media (max-width: 640px) {
-  .hero__laser svg { width: 150px; top: 96px; right: 12px; opacity: 0.6; }
+  .hero__laser-line { top: 34%; }
 }
 
 /* Linha de laser que percorre o site inteiro consoante o scroll */
