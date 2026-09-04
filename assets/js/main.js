@@ -27,6 +27,36 @@
   window.addEventListener('scroll', updateHeaderState, { passive: true });
 
   /* ------------------------------------------------------------------ */
+  /* Linha de laser: acompanha a posição do scroll em todo o site        */
+  /* ------------------------------------------------------------------ */
+  var laserScan = document.getElementById('laser-scan');
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (laserScan && !reduceMotion) {
+    var laserTicking = false;
+
+    function updateLaserScan() {
+      var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+      progress = Math.max(0, Math.min(1, progress));
+      var y = progress * window.innerHeight;
+      laserScan.style.transform = 'translateY(' + y + 'px)';
+      laserTicking = false;
+    }
+
+    function requestLaserUpdate() {
+      if (!laserTicking) {
+        laserTicking = true;
+        window.requestAnimationFrame(updateLaserScan);
+      }
+    }
+
+    updateLaserScan();
+    window.addEventListener('scroll', requestLaserUpdate, { passive: true });
+    window.addEventListener('resize', requestLaserUpdate);
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Mobile menu                                                        */
   /* ------------------------------------------------------------------ */
   var menuToggle = document.getElementById('menu-toggle');
