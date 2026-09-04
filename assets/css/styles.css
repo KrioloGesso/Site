@@ -387,7 +387,7 @@ select:focus-visible {
   .hero__laser-line { animation: none; opacity: 0.85; }
 }
 @media (max-width: 640px) {
-  .hero__laser-line { top: 34%; }
+  .hero__laser-line { top: 57%; }
 }
 
 /* Linha de laser que percorre o site inteiro consoante o scroll */
