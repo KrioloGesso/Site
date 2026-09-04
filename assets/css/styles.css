@@ -723,19 +723,22 @@ select:focus-visible {
 }
 .process__step {
   position: relative;
-  padding-top: 24px;
-  border-top: 1.5px solid var(--color-accent-glow);
-  box-shadow: 0 -1px 8px -2px rgba(124,255,181,0.4);
+  padding: 30px 26px 32px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent-glow);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glow-sm);
 }
 .process__index {
   display: block;
   font-family: var(--font-display);
   font-size: 1.8rem;
   color: var(--color-accent);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
-.process__step h3 { margin-bottom: 8px; }
-.process__step p { color: var(--color-grey); font-size: 0.94rem; }
+.process__step h3 { margin-bottom: 10px; }
+.process__step p { color: var(--color-grey); font-size: 0.94rem; line-height: 1.55; }
 
 /* ==========================================================================
    Contacto
