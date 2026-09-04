@@ -10,6 +10,7 @@
   --color-grey: #9C988E;         /* texto secundário, cinza-cimento */
   --color-mineral: #6E6A60;      /* detalhes discretos (índices, legendas) */
   --color-panel: #1D1B17;        /* cartões, formulário, menu mobile */
+  --color-cement: #302E2B;       /* cinzento-cimento queimado, para alguns cartões */
   --color-accent: #33D673;       /* verde-laser sólido: texto, ícones, botões */
   --color-accent-dark: #1F9E56;  /* hover do verde sólido */
   --color-accent-glow: #7CFFB5;  /* verde neon, só para brilho/linhas de laser */
@@ -231,8 +232,12 @@ select:focus-visible {
   gap: 10px;
   flex-shrink: 0;
 }
-.brand__mark { width: 28px; height: 28px; filter: drop-shadow(0 0 5px rgba(124, 255, 181, 0.45)); }
-.brand__mark path { fill: var(--color-accent); transition: fill 0.3s var(--ease); }
+.brand__mark {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgba(124, 255, 181, 0.45));
+}
 .brand__name {
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -546,7 +551,7 @@ select:focus-visible {
 }
 
 .material-card {
-  background: var(--color-panel);
+  background: var(--color-cement);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 28px;
@@ -610,7 +615,7 @@ select:focus-visible {
   font-weight: 600;
   padding: 10px 18px;
   border-radius: 999px;
-  background: var(--color-panel);
+  background: var(--color-cement);
   border: 1px solid var(--color-border);
 }
 
@@ -720,7 +725,7 @@ select:focus-visible {
 .process__step {
   position: relative;
   padding: 30px 26px 32px;
-  background: var(--color-panel);
+  background: var(--color-cement);
   border: 1px solid var(--color-border);
   border-top: 2px solid var(--color-accent-glow);
   border-radius: var(--radius-lg);
