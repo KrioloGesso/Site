@@ -21,6 +21,7 @@ $mime = @{
   ".webp" = "image/webp"
   ".png"  = "image/png"
   ".ico"  = "image/x-icon"
+  ".mp4"  = "video/mp4"
 }
 
 while ($listener.IsListening) {
