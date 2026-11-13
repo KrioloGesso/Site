@@ -1010,3 +1010,7 @@ select:focus-visible {
 @media (max-width: 640px) {
   .lightbox__nav { width: 42px; height: 42px; font-size: 1.6rem; }
 }
+
+
+/* Remove the laser line that followed page scrolling. */
+.laser-scan { display: none; }
